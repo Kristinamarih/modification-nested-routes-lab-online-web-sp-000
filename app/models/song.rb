@@ -12,10 +12,10 @@ class Song < ActiveRecord::Base
 
   def artist_select(song)
     if song.artist.nil?
-      select_tag "post[author_id]",
+      select_tag "song[artist_id]",
       options_from_collection_for_select(Artist.all, :id, :name)
     else
-      hidden_field_tag "post[author_id]"
+      hidden_field_tag "song[artist_id]"
     end
-  end    
+  end
 end
